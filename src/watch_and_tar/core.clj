@@ -13,7 +13,7 @@
 (defn usage [options-summary]
   (->> ["This is my program. There are many like it, but this one is mine."
         ""
-        "Usage: program-name [options] action"
+        "Usage: watch-and-tar [options] action"
         ""
         "Options:"
         options-summary

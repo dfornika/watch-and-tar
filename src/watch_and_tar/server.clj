@@ -1,14 +1,12 @@
 (ns watch-and-tar.server
-  (:require [hawk.core :as hawk]))
+  (:require [hawk.core :as hawk]
+            [watch-and-tar.handlers :as handlers]))
 
 (defn start!
   "Start the watcher"
   [options]
   (hawk/watch! [{:paths [(:dir options)]
-                 :handler (fn [ctx e]
-                            (println "event: " e)
-                            (println "context: " ctx)
-                            ctx)}]))
+                 :handler handlers/print-handler}]))
 
 (defn stop!
   "Stop a watcher"
