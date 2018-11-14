@@ -11,7 +11,7 @@
    ["-h" "--help"]])
 
 (defn usage [options-summary]
-  (->> ["This is my program. There are many like it, but this one is mine."
+  (->> ["Watch a directory and tar.gz sub-directories in real-time."
         ""
         "Usage: watch-and-tar [options] action"
         ""
