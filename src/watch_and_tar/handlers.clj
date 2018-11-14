@@ -4,10 +4,11 @@
 
 (defn print-handler [ctx e]
   "Just print the event and context."
-  (println "event: " e)
-  (println "context: " ctx)
-  (println "path: " (.getPath (:file e)))
-  ctx)
+  (if (.isDirectory (:file e))
+    (do (println "event: " e)
+        (println "context: " ctx)
+        (println "path: " (.getPath (:file e)))
+        ctx)))
 
 (defn compress-handler [ctx e]
   "Compress directories as they are created."
